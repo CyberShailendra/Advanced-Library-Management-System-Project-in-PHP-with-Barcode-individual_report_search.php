@@ -67,6 +67,9 @@ Parameter: roll_number (GET)
 ### Proof Screenshot
 ![SQL Injection Confirmation - Report 2](2_report.png)
 
+### Execution Log
+Complete sqlmap execution log: [log](log)
+
 Only 95 HTTP requests needed (vs 336–723 for the POST-based endpoints) — this is the **fastest and cheapest** injection point to exploit because GET parameters need no form/session-state replay.
 
 ## Impact
