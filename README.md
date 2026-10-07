@@ -65,7 +65,7 @@ Parameter: roll_number (GET)
 | 2 | janesmith@example.com | 210987654321 | 9876543211 | Smith | **librarian123** | jane.librarian | Jane | Librarian |
 
 ### Proof Screenshot
-![SQL Injection Confirmation - Report 2](Screenshot/2_report.png)
+![SQL Injection Confirmation - Report 2](2_report.png)
 
 Only 95 HTTP requests needed (vs 336–723 for the POST-based endpoints) — this is the **fastest and cheapest** injection point to exploit because GET parameters need no form/session-state replay.
 
